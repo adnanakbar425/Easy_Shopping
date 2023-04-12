@@ -144,6 +144,7 @@ public class CheckOutActivity extends AppCompatActivity {
         //setting address fields
         order.setStreet(street);
         order.setComments(comments);
+        order.setCustomerId(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         root.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(key).setValue(order).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

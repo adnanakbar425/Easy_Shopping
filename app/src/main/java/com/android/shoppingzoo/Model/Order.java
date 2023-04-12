@@ -7,13 +7,14 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Order implements Serializable {
+    private String customerId;
     private String id, status, address, street, comments;
     private String dateOfOrder;
     private double totalPrice;
     private ArrayList<Product> productArrayList;
 
-
-    public Order(String id, String status, String address, String street, String comments, String dateOfOrder, double totalPrice, ArrayList<Product> productArrayList) {
+    public Order(String customerId, String id, String status, String address, String street, String comments, String dateOfOrder, double totalPrice, ArrayList<Product> productArrayList) {
+        this.customerId = customerId;
         this.id = id;
         this.status = status;
         this.address = address;
@@ -27,6 +28,14 @@ public class Order implements Serializable {
     public Order() {
         totalPrice = 0;
         productArrayList = new ArrayList<Product>();
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public String getAddress() {

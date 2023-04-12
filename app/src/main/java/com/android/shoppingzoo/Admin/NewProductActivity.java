@@ -34,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 public class NewProductActivity extends AppCompatActivity {
     String[] categoriesList = {"Select Category", "Baby", "Kids", "Men", "Women"};
@@ -219,6 +220,23 @@ public class NewProductActivity extends AppCompatActivity {
         myRootRef = FirebaseDatabase.getInstance().getReference();
         product=new Product();
         Utils.statusBarColor(NewProductActivity.this);
+
+
+
+        if(getIntent().getSerializableExtra("product")!=null){
+            Product product= (Product) getIntent().getSerializableExtra("product");
+            nameEt.setText(product.getName());
+            priceEt.setText(product.getPrice()+"");
+            priceEt.setText(product.getPrice()+"");
+            colorEt.setText(product.getColor()+"");
+            stockEt.setText(product.getStock()+"");
+            descriptionEt.setText(product.getDescription()+"");
+            if (product.getPhotoUrl() != null) {
+                if (!product.getPhotoUrl().equals("")) {
+                    Picasso.get().load(product.getPhotoUrl()).placeholder(R.drawable.no_background_icon).into(productImg);
+                }
+            }
+        }
     }
 
     public void goBack(View view) {
