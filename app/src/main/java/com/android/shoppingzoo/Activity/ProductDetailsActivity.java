@@ -10,23 +10,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.shoppingzoo.Adapter.SliderAdapter;
 import com.android.shoppingzoo.Model.Order;
 import com.android.shoppingzoo.Model.Product;
 import com.android.shoppingzoo.Model.Utils;
 import com.android.shoppingzoo.R;
+import com.smarteist.autoimageslider.SliderView;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 import io.paperdb.Paper;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 
     private CardView addToCartBtn;
-    private ImageView productImg;
     private TextView plusBTn,minusBtn,quantityTV;
     private TextView productName,productDescription,price;
     Product product;
 
     int quantity=1;
+
+    SliderView imageSlider;
+    ArrayList<String> imagesList;
 
     private Order order;
 
@@ -41,14 +47,29 @@ public class ProductDetailsActivity extends AppCompatActivity {
         product= (Product) getIntent().getSerializableExtra("product");
 
 
-        if(product.getPhotoUrl()!=null){
-            if(!product.getPhotoUrl().equals("")){
-                Picasso.get().load(product.getPhotoUrl()).placeholder(R.drawable.icon).into(productImg);
-            }
-        }
         productName.setText(product.getName());
         productDescription.setText(product.getDescription());
         price.setText("$"+product.getPrice());
+
+        if(product.getImage1()!=null){
+            imagesList.add(product.getImage1());
+        }
+        if(product.getImage2()!=null){
+            imagesList.add(product.getImage2());
+        }
+        if(product.getImage3()!=null){
+            imagesList.add(product.getImage3());
+        }
+
+        Set_SliderView(imagesList, imageSlider);
+
+    }
+
+    public void Set_SliderView(ArrayList<String> images, SliderView sliderView) {
+        SliderAdapter sliderAdapter = new SliderAdapter();
+        sliderAdapter.renewItems(images);
+        sliderView.setSliderAdapter(sliderAdapter);
+        sliderView.startAutoCycle();
 
     }
 
@@ -98,8 +119,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
     }
 
     private void initAll() {
+        imagesList=new ArrayList<>();
         addToCartBtn=findViewById(R.id.add_to_cart_btn);
-        productImg=findViewById(R.id.product_img);
+        imageSlider=findViewById(R.id.slider_view);
         plusBTn=findViewById(R.id.plus_btn);
         minusBtn=findViewById(R.id.minus_btn);
         quantityTV=findViewById(R.id.quantity_tv);
@@ -115,7 +137,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
             order=Paper.book().read("order");
         }
 
-        Utils.statusBarColor(ProductDetailsActivity.this);
     }
 
     public void goBack(View view) {

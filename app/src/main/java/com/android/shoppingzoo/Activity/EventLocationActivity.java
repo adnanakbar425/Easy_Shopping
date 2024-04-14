@@ -115,7 +115,6 @@ public class EventLocationActivity extends AppCompatActivity implements OnMapRea
         mapView = mapFragment.getView();
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(EventLocationActivity.this);
 
-        Utils.statusBarColor(EventLocationActivity.this);
 
         placesClient = Places.createClient(this);
 

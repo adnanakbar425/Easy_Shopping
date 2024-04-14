@@ -222,7 +222,5 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         myRootRef = FirebaseDatabase.getInstance().getReference();
 
-        Utils.statusBarColor(LoginActivity.this);
-
     }
 }

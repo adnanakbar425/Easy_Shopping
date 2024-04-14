@@ -158,7 +158,6 @@ public class CustomersOrders extends AppCompatActivity {
     }
 
     private void initAll() {
-        Utils.statusBarColor(CustomersOrders.this);
         orderArrayList = new ArrayList<Order>();
         recyclerView = findViewById(R.id.cart_recyclerview);
         progressBar = findViewById(R.id.spin_progress_bar);

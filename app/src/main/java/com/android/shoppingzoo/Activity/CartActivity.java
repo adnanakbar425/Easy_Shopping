@@ -110,7 +110,6 @@ public class CartActivity extends AppCompatActivity {
         cartRecyclerView.setAdapter(cartCustomAdapter);
         checkOut=findViewById(R.id.check_out_btn);
 
-        Utils.statusBarColor(CartActivity.this);
     }
 
 }

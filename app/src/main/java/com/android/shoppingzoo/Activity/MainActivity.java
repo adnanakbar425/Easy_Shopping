@@ -113,7 +113,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getProfileData();
 
 
-       Utils.statusBarColor(MainActivity.this);
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();

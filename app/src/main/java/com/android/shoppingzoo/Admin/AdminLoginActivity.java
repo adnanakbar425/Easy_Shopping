@@ -125,6 +125,6 @@ public class AdminLoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         myRootRef = FirebaseDatabase.getInstance().getReference();
-        Utils.statusBarColor(AdminLoginActivity.this);
+
     }
 }

@@ -169,6 +169,5 @@ public class SignupUserActivity extends AppCompatActivity {
         //initialize function
         user = new User();
 
-        Utils.statusBarColor(SignupUserActivity.this);
     }
 }

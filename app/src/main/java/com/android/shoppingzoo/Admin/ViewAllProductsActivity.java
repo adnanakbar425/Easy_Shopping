@@ -50,7 +50,6 @@ public class ViewAllProductsActivity extends AppCompatActivity {
         noJokeText = findViewById(R.id.no_product);
         nameInput = findViewById(R.id.name_input);
         myRootRef = FirebaseDatabase.getInstance().getReference();
-        Utils.statusBarColor(ViewAllProductsActivity.this);
 
         mAdapter = new ProductsAdapter(productArrayList, ViewAllProductsActivity.this,true);
         recyclerView.setNestedScrollingEnabled(false);

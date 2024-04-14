@@ -44,9 +44,9 @@ public class CartCustomAdapter extends RecyclerView.Adapter<CartCustomAdapter.Vi
         holder.name.setText(product.getName());
         holder.price.setText("$"+product.getPrice());
         holder.quantity.setText(product.getQuantityInCart()+"");
-        if (product.getPhotoUrl() != null) {
-            if (!product.getPhotoUrl().equals("")) {
-                Picasso.get().load(product.getPhotoUrl()).placeholder(R.drawable.icon).into(holder.image);
+        if (product.getImage1() != null) {
+            if (!product.getImage1().equals("")) {
+                Picasso.get().load(product.getImage1()).placeholder(R.drawable.no_background_icon).into(holder.image);
             }
         }
 

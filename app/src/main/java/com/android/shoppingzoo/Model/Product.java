@@ -3,11 +3,35 @@ package com.android.shoppingzoo.Model;
 import java.io.Serializable;
 
 public class Product implements Serializable {
-    String productId,name,category,brand,sizeType,size,color,stock,photoUrl,description;
+    String productId,name,category,brand,sizeType,size,color,stock,image1,image2,image3,description;
     int quantityInCart;
     double price;
 
     public Product() {
+    }
+
+    public String getImage1() {
+        return image1;
+    }
+
+    public void setImage1(String image1) {
+        this.image1 = image1;
+    }
+
+    public String getImage2() {
+        return image2;
+    }
+
+    public void setImage2(String image2) {
+        this.image2 = image2;
+    }
+
+    public String getImage3() {
+        return image3;
+    }
+
+    public void setImage3(String image3) {
+        this.image3 = image3;
     }
 
     public int getQuantityInCart() {
@@ -98,13 +122,6 @@ public class Product implements Serializable {
         this.stock = stock;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
-
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
-    }
 
     @Override
     public String toString() {
@@ -118,7 +135,7 @@ public class Product implements Serializable {
                 ", price='" + price + '\'' +
                 ", color='" + color + '\'' +
                 ", stock='" + stock + '\'' +
-                ", photoUrl='" + photoUrl + '\'' +
+                ", photoUrl='" + image1 + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

@@ -134,6 +134,6 @@ public class AdminHome extends AppCompatActivity {
         viewCustomersOrders = findViewById(R.id.view_customer_order);
         myRootRef = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
-        Utils.statusBarColor(AdminHome.this);
+
     }
 }

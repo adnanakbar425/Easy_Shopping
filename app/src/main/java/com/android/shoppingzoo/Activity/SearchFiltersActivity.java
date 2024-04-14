@@ -24,7 +24,6 @@ public class SearchFiltersActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_filters);
-        Utils.statusBarColor(SearchFiltersActivity.this);
 
         initAll();
 

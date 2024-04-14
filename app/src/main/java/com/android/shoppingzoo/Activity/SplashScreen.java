@@ -25,7 +25,6 @@ public class SplashScreen extends AppCompatActivity {
 
         Paper.init(SplashScreen.this);
         final String temp=Paper.book().read("active");
-        Utils.statusBarColor(SplashScreen.this);
 
         new Handler().postDelayed(new Runnable() {
             @Override

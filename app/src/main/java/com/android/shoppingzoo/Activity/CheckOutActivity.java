@@ -67,7 +67,6 @@ public class CheckOutActivity extends AppCompatActivity {
         //setting Up listeners
         OnClickListeners();
 
-        Utils.statusBarColor(CheckOutActivity.this);
 
 
     }

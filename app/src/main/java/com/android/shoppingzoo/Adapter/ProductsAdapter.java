@@ -57,10 +57,10 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyView
 
         Product product = myJokesList.get(position);
 
-        if (product.getPhotoUrl() != null) {
-            if (!product.getPhotoUrl().equals("")) {
+        if (product.getImage1() != null) {
+            if (!product.getImage1().equals("")) {
                 holder.productImg.setVisibility(View.VISIBLE);
-                Picasso.get().load(product.getPhotoUrl()).placeholder(R.drawable.no_background_icon).into(holder.productImg);
+                Picasso.get().load(product.getImage1()).placeholder(R.drawable.no_background_icon).into(holder.productImg);
             }
         }
         holder.name.setText(product.getName());
